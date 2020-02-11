@@ -1,24 +1,122 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column | Type  | Options                 |
+|:------:|:-----:|:-----------------------:|
+|name    |string |null: false, index: true |
+|email   |string |null: false, unique: true|
 
-* Ruby version
+### Association
+- has_many :images
+- has_many :comments
+- has_many :likes
 
-* System dependencies
 
-* Configuration
+## imagesテーブル
 
-* Database creation
+| Column | Type  | Options                 |
+|:------:|:-----:|:-----------------------:|
+|image   |string |null: false              |
 
-* Database initialization
+### Association
+- belongs_to :user
+- has_many :albums, through: :images_albums
+- has_many :tags, through: :images_tags
+- has_many :days, through: :images_days
+- has_many :comments
+- has_many :likes
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## albumsテーブル
 
-* Deployment instructions
+| Column | Type     | Options                      |
+|:------:|:--------:|:----------------------------:|
+|name    |string    |null: false, index: true      |
+|user_id |references|null: false, foreign_key: true|
 
-* ...
+
+### Association
+- belongs_to :user
+- has_many :images, through: :images_albums
+
+
+## images_albumsテーブル
+
+| Column | Type     | Options                      |
+|:------:|:--------:|:----------------------------:|
+|image_id|references|null: false, foreign_key: true|
+|album_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :image
+- belongs_to :album
+
+
+## tagsテーブル
+
+| Column | Type  | Options                 |
+|:------:|:-----:|:-----------------------:|
+|name    |string |null: false, index: true |
+
+### Association
+- has_many :images, through: :images_tags
+
+
+## images_tagsテーブル
+
+| Column | Type     | Options                      |
+|:------:|:--------:|:----------------------------:|
+|image_id|references|null: false, foreign_key: true|
+|tag_id  |references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :image
+- belongs_to :tag
+
+
+## daysテーブル
+
+| Column | Type  | Options                 |
+|:------:|:-----:|:-----------------------:|
+|data    |string |null: false, index: true |
+
+### Association
+- has_many :images, through: :images_days
+
+
+## images_daysテーブル
+
+| Column | Type     | Options                      |
+|:------:|:--------:|:----------------------------:|
+|image_id|references|null: false, foreign_key: true|
+|day_id  |references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :image
+- belongs_to :day
+
+
+## commentsテーブル
+
+| Column  | Type     | Options                      |
+|:-------:|:--------:|:----------------------------:|
+|body     |text      |                              |
+|user_id  |references|null: false, foreign_key: true|
+|image_id |references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :image
+
+
+## likesテーブル
+
+| Column  | Type     | Options                      |
+|:-------:|:--------:|:----------------------------:|
+|user_id  |references|null: false, foreign_key: true|
+|image_id |references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :image
