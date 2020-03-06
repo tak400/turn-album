@@ -8,27 +8,41 @@
     font-size: 30px;
     text-align: center;
     display: inline-block;
-    margin-left: calc(50% - 240px);
-    margin-right: calc(50% - 200px);
+    margin-left: calc(50% - 120px);
+    margin-right: calc(50% - 320px);
   }
   &--logout {
     font-size: 12px;
     height: 12px;
-    widows: 20px;
+    width: 95px;
     float: right;
     line-height: 12px;
     text-align: center;
     display: inline-block;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
   }
   &--info {
     font-size: 12px;
     height: 12px;
-    widows: 20px;
+    width: 95px;
     float: right;
     line-height: 12px;
     text-align: center;
     display: inline-block;
+    margin-top: 5px;
+  }
+}
+
+.body {
+  height: calc(100vh - 200px);
+  font-size: 20px;
+  &--menu {
+    text-align: center;
+    margin: 10px;
+    &--btn {
+      margin: 10px;
+    }
   }
 }
