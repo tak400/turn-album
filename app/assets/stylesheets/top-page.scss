@@ -40,9 +40,21 @@
   font-size: 20px;
   &--menu {
     text-align: center;
-    margin: 10px;
+    margin: 20px;
     &--btn {
       margin: 10px;
+      &--upl {
+        margin: 10px;
+      }
+      &--tag {
+        margin: 10px;
+      }
+      &--cre {
+        margin: 10px;
+      }
+      &--pla {
+        margin: 10px;
+      }
     }
   }
 }
