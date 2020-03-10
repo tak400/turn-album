@@ -37,23 +37,27 @@
 
 .body {
   height: calc(100vh - 200px);
-  font-size: 20px;
   &--menu {
     text-align: center;
     margin: 20px;
+    font-size: 25px;
     &--btn {
       margin: 10px;
       &--upl {
         margin: 10px;
+        font-size: 20px;
       }
       &--tag {
         margin: 10px;
+        font-size: 20px;
       }
       &--cre {
         margin: 10px;
+        font-size: 20px;
       }
       &--pla {
         margin: 10px;
+        font-size: 20px;
       }
     }
   }
