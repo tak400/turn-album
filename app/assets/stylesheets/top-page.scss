@@ -1,0 +1,62 @@
+.header {
+  width: 100vw;
+  height: 200px;
+  &--title {
+    height: 120px;
+    width: 240px;
+    line-height: 120px;
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+    margin-left: calc(50% - 120px);
+    margin-right: calc(50% - 320px);
+  }
+  &--logout {
+    font-size: 12px;
+    height: 12px;
+    width: 95px;
+    float: right;
+    line-height: 12px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+  &--info {
+    font-size: 12px;
+    height: 12px;
+    width: 95px;
+    float: right;
+    line-height: 12px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+  }
+}
+
+.body {
+  height: calc(100vh - 200px);
+  &--menu {
+    text-align: center;
+    margin: 20px;
+    font-size: 25px;
+    &--btn {
+      margin: 10px;
+      font-size: 20px;
+      &--upl {
+        margin: 10px;
+        
+      }
+      &--tag {
+        margin: 10px;
+      }
+      &--cre {
+        margin: 10px;
+      }
+      &--pla {
+        margin: 10px;
+      }
+    }
+  }
+}

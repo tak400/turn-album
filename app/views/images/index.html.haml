@@ -1,2 +1,25 @@
-.logout
-  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+.header
+  .header--title
+    = link_to "TURN ALBUM", root_path
+  .header--logout
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+  .header--info
+    = link_to "アカウント情報", edit_user_registration_path, class: 'btn'
+  
+
+
+.body
+  .body--menu
+    メニュー
+    .body--menu--btn
+      .body--menu--btn--upl
+        画像をアップロード
+  
+      .body--menu--btn--tag
+        画像にタグ付け
+  
+      .body--menu--btn--cre
+        アルバム作成
+  
+      .body--menu--btn--pla
+        アルバム再生
